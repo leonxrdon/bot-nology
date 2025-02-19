@@ -1,0 +1,32 @@
+# Ignorar el archivo .env en todas las carpetas
+.env
+
+# Ignorar todas las carpetas venv (virtual environments) en todas las carpetas
+venv/
+*/venv/
+
+# Archivos y directorios específicos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+
+# Archivos de configuración del editor
+.vscode/
+.idea/
+
+# Archivos temporales generados por el sistema
+*.log
+*.bak
+*.swp
+*.swo
+
+# Archivos de compilación y distribución
+build/
+dist/
+*.egg-info/
+
+# Archivos de dependencias de Python (si no se usan requirements.txt)
+*.egg
+*.egg-info/

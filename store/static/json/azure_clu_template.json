@@ -1,0 +1,32 @@
+{
+    "projectFileVersion": "2024-11-15-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0,
+            "normalizeCasing": False,
+            "augmentDiacritics": False
+        },
+        "projectproduct_Name": "CLU-Botnology",
+        "multilingual": True,
+        "description": "Proyecto de CLU para productos seleccionados",
+        "language": "es"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [],
+        "entities": [],
+        "utterances": []
+    }
+}
+
+¿Cuál es el nombre del {{product.product_name}}?
+¿Este producto se llama {{product.product_name}}?
+¿Cómo se llama este {{product.product_name}}?
+¿Cuál es el nombre completo de {{product.product_name}}?
+¿Este {{product.product_name}} tiene otro nombre?
+¿Cómo puedo saber el nombre de {{product.product_name}}?
+¿Este artículo es el mismo que {{product.product_name}}?
+¿Es este {{product.product_name}} el modelo más reciente?
+¿Me puedes dar el nombre del {{product.product_name}} que estás buscando?

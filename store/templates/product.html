@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{product.product_name}}{% endblock %}
+{% block breadcrumb %}
+<li><a href="{% url 'store' %}">Tienda</a></li>
+<li class="active">{{product.product_name}}</li>
+{% endblock %}
+{% block content %}
+<!-- Product main img -->
+<div class="col-md-5 col-md-push-2">
+    <div id="product-main-img">
+        <div class="product-preview">
+            <img src="{% static 'img/product01.png' %}" alt="">
+        </div>
+
+        <div class="product-preview">
+            <img src="{% static 'img/product03.png' %}" alt="">
+        </div>
+
+        <div class="product-preview">
+            <img src="{% static 'img/product06.png' %}" alt="">
+        </div>
+
+        <div class="product-preview">
+            <img src="{% static 'img/product08.png' %}" alt="">
+        </div>
+    </div>
+</div>
+<!-- /Product main img -->
+
+<!-- Product thumb imgs -->
+<div class="col-md-2  col-md-pull-5">
+    <div id="product-imgs">
+        <div class="product-preview">
+            <img src="{% static 'img/product01.png' %}" alt="">
+        </div>
+
+        <div class="product-preview">
+            <img src="{% static 'img/product03.png' %}" alt="">
+        </div>
+
+        <div class="product-preview">
+            <img src="{% static 'img/product06.png' %}" alt="">
+        </div>
+
+        <div class="product-preview">
+            <img src="{% static 'img/product08.png' %}" alt="">
+        </div>
+    </div>
+</div>
+<!-- /Product thumb imgs -->
+
+<!-- Product details -->
+<div class="col-md-5">
+    <div class="product-details">
+        <h2 class="product-name">{{product.product_name}}</h2>
+        <div>
+            <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="review-link" href="#">10 Review(s)</a>
+        </div>
+        <div>
+            <h3 class="product-price">€ {{product.price}}</h3>
+            <span class="product-available">In Stock</span>
+        </div>
+        <div class="add-to-cart">
+            <div class="qty-label">
+                Qty
+                <div class="input-number">
+                    <input type="number">
+                    <span class="qty-up">+</span>
+                    <span class="qty-down">-</span>
+                </div>
+            </div>
+            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+        </div>
+
+        <ul class="product-btns">
+            <li><a href="#"><i class="fa fa-heart-o"></i> Deseados</a></li>
+            <li><a href="#"><i class="fa fa-exchange"></i> Comparar</a></li>
+        </ul>
+
+        <ul class="product-links">
+            <li>{{product.product_code}}</li>
+        </ul>
+
+        <ul class="product-links">
+            <li>Share:</li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+
+    </div>
+</div>
+<!-- /Product details -->
+
+<!-- Product tab -->
+<div class="col-md-12">
+    <div id="product-tab">
+        <!-- product tab nav -->
+        <ul class="tab-nav">
+            <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
+            <li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+        </ul>
+        <!-- /product tab nav -->
+
+        <!-- product tab content -->
+        <div class="tab-content">
+            <!-- tab1  -->
+            <div id="tab1" class="tab-pane fade in active">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    {% if product.product_name %}<tr><th>Nombre del Producto</th><td>{{ product.product_name }}</td></tr>{% endif %}
+                                    {% if product.price %}<tr><th>Precio</th><td>€ {{ product.price }}</td></tr>{% endif %}
+                                    {% if product.brand %}<tr><th>Marca</th><td>{{ product.brand }}</td></tr>{% endif %}
+                                    {% if product.model %}<tr><th>Modelo</th><td>{{ product.model }}</td></tr>{% endif %}
+                                    {% if product.product_code %}<tr><th>Código de Producto</th><td>{{ product.product_code }}</td></tr>{% endif %}
+                                    {% if product.processor %}<tr><th>Procesador</th><td>{{ product.processor }}</td></tr>{% endif %}
+                                    {% if product.graphics %}<tr><th>Tarjeta Gráfica</th><td>{{ product.graphics }}</td></tr>{% endif %}
+                                    {% if product.hard_disk %}<tr><th>Disco Duro</th><td>{{ product.hard_disk }}</td></tr>{% endif %}
+                                    {% if product.ram %}<tr><th>RAM</th><td>{{ product.ram }}</td></tr>{% endif %}
+                                    {% if product.screen %}<tr><th>Pantalla</th><td>{{ product.screen }}</td></tr>{% endif %}
+                                    {% if product.battery %}<tr><th>Batería</th><td>{{ product.battery }}</td></tr>{% endif %}
+                                    {% if product.warranty %}<tr><th>Garantía</th><td>{{ product.warranty }}</td></tr>{% endif %}
+                                    {% if product.so_software %}<tr><th>Sistema Operativo/Software</th><td>{{ product.so_software }}</td></tr>{% endif %}
+                                    {% if product.general %}<tr><th>General</th><td>{{ product.general }}</td></tr>{% endif %}
+                                    {% if product.connections %}<tr><th>Conexiones</th><td>{{ product.connections }}</td></tr>{% endif %}
+                                    {% if product.audio %}<tr><th>Audio</th><td>{{ product.audio }}</td></tr>{% endif %}
+                                    {% if product.webcam %}<tr><th>Webcam</th><td>{{ product.webcam }}</td></tr>{% endif %}
+                                    {% if product.certifications %}<tr><th>Certificaciones</th><td>{{ product.certifications }}</td></tr>{% endif %}
+                                    {% if product.packing_size %}<tr><th>Tamaño de Embalaje</th><td>{{ product.packing_size }}</td></tr>{% endif %}
+                                    {% if product.memory_reader %}<tr><th>Lector de Memoria</th><td>{{ product.memory_reader }}</td></tr>{% endif %}
+                                    {% if product.keyboard %}<tr><th>Teclado</th><td>{{ product.keyboard }}</td></tr>{% endif %}
+                                    {% if product.optical_driver %}<tr><th>Unidad Óptica</th><td>{{ product.optical_driver }}</td></tr>{% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /tab1  -->
+
+            <!-- tab3  -->
+            <div id="tab3" class="tab-pane fade in">
+                <div class="row">
+                    <!-- Rating -->
+                    <div class="col-md-3">
+                        <div id="rating">
+                            <div class="rating-avg">
+                                <span>4.5</span>
+                                <div class="rating-stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                            </div>
+                            <ul class="rating">
+                                <li>
+                                    <div class="rating-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="rating-progress">
+                                        <div style="width: 80%;"></div>
+                                    </div>
+                                    <span class="sum">3</span>
+                                </li>
+                                <li>
+                                    <div class="rating-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="rating-progress">
+                                        <div style="width: 60%;"></div>
+                                    </div>
+                                    <span class="sum">2</span>
+                                </li>
+                                <li>
+                                    <div class="rating-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="rating-progress">
+                                        <div></div>
+                                    </div>
+                                    <span class="sum">0</span>
+                                </li>
+                                <li>
+                                    <div class="rating-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="rating-progress">
+                                        <div></div>
+                                    </div>
+                                    <span class="sum">0</span>
+                                </li>
+                                <li>
+                                    <div class="rating-stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="rating-progress">
+                                        <div></div>
+                                    </div>
+                                    <span class="sum">0</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Rating -->
+
+                    <!-- Reviews -->
+                    <div class="col-md-6">
+                        <div id="reviews">
+                            <ul class="reviews">
+                                <li>
+                                    <div class="review-heading">
+                                        <h5 class="name">John</h5>
+                                        <p class="date">27 DEC 2018, 8:0 PM</p>
+                                        <div class="review-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o empty"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="review-heading">
+                                        <h5 class="name">John</h5>
+                                        <p class="date">27 DEC 2018, 8:0 PM</p>
+                                        <div class="review-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o empty"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="review-heading">
+                                        <h5 class="name">John</h5>
+                                        <p class="date">27 DEC 2018, 8:0 PM</p>
+                                        <div class="review-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o empty"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="reviews-pagination">
+                                <li class="active">1</li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Reviews -->
+
+                    <!-- Review Form -->
+                    <div class="col-md-3">
+                        <div id="review-form">
+                            <form class="review-form">
+                                <input class="input" type="text" placeholder="Your Name">
+                                <input class="input" type="email" placeholder="Your Email">
+                                <textarea class="input" placeholder="Your Review"></textarea>
+                                <div class="input-rating">
+                                    <span>Your Rating: </span>
+                                    <div class="stars">
+                                        <input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
+                                        <input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
+                                        <input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
+                                        <input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
+                                        <input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
+                                    </div>
+                                </div>
+                                <button class="primary-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /Review Form -->
+                </div>
+            </div>
+            <!-- /tab3  -->
+        </div>
+        <!-- /product tab content  -->
+    </div>
+</div>
+<!-- /product tab -->
+{% endblock%}
