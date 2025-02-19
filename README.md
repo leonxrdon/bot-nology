@@ -3,6 +3,11 @@
 
 
 **Botnology** es un proyecto que permite gestionar un catálogo de productos en formato PDF y consultarlos a través de un chatbot que utiliza GPT-4o mini de Azure OpenAI. El sistema utiliza Azure Document Intelligence para extraer la información relevante de los archivos PDF y almacenarla en una base de datos para su posterior consulta y gestión.
+## Visita la Web
+
+Puedes acceder a la aplicación en línea a través del siguiente enlace:
+
+[Visitar la Web de Botnology](https://leonxrdon.pythonanywhere.com/)
 
 ## Descripción
 
