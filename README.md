@@ -35,15 +35,6 @@ Adicionalmente, se usa **Celery** para gestionar las tareas de carga de archivos
    git clone https://github.com/leonxrdon/botnology
    cd botnology
    ```
-## Instalación
-
-1. Clona el repositorio en tu máquina local:
-
-   ```bash
-   git clone <repositorio_url>
-   cd <nombre_del_directorio>
-   ```
-
 2. Crea y activa un entorno virtual:
 
    ```bash
